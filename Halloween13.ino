@@ -18,23 +18,19 @@ void setup(){
 
 void loop(){
   DXSensVal=analogRead(4);
-  Serial.println(DXSensVal);
+  //Serial.println(DXSensVal);
   if(DXSensVal>300){
     digitalWrite(8,HIGH);
     mp.setPlayMode(MODE_NORMAL);
     s=random(0,4);
-    Serial.println(s);
     //mp.creatPlaylist();
     if(s<=1){
-      Serial.println("in 1");
-      mp.playSong("Stranger.MP3");
+      mp.playSong("Stranger.MP3"); //This is a specific file on the sd card
     }
     if(s==2){
-      Serial.println("in 2");
       mp.playSong("theclaw.mp3");
     }
     if(s>=3){
-      Serial.println("in 4");
       mp.playSong("bozo.mp3");
     }
     delay(2000);
